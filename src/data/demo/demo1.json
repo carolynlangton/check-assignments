@@ -10,7 +10,7 @@
             "items": [
                 {
                     "type": "download",
-                    "icon": "glyphicon-download",
+                    "icon": "fa-download",
                     "file": "demo1-starter.zip",
                     "description": "Starter files"
                 }

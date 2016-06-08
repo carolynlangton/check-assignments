@@ -204,8 +204,8 @@ $(document).ready(function () {
         setCompletedTasks(completedTasks);
 
         // Update the visiblity of the checked/unchecked icons
-        $(panelElement.selector + ' > span.' + (completed ? incompleteSpanClass : completeSpanClass)).hide();
-        $(panelElement.selector + ' > span.' + (completed ? completeSpanClass : incompleteSpanClass)).show();
+        $(panelElement.selector + ' > i.' + (completed ? incompleteSpanClass : completeSpanClass)).hide();
+        $(panelElement.selector + ' > i.' + (completed ? completeSpanClass : incompleteSpanClass)).show();
 
         // When a parent tasks is updated, update its children
         if (!skipChildrenUpdate) {
@@ -330,13 +330,13 @@ $(document).ready(function () {
 
             // Only include the checked/unchecked icons if the task is checkable
             if (taskCheckable) {
-                taskHtml.push('<span class="incomplete-check glyphicon glyphicon-unchecked" aria-hidden="true" title="Click to mark task complete"></span>');
-                taskHtml.push('<span class="complete-check glyphicon glyphicon-ok" aria-hidden="true" title="Click to mark task incomplete" style="display: none;"></span>');
+                taskHtml.push('<i class="incomplete-check fa fa-square-o fa-lg" aria-hidden="true" title="Click to mark task complete"></i>');
+                taskHtml.push('<i class="complete-check fa fa-check-square-o fa-lg" aria-hidden="true" title="Click to mark task incomplete" style="display: none;"></i>');
             }
 
             // If there is an icon specified for the task, add it.
             if (tasks[idx].icon) {
-                taskHtml.push('<span class="glyphicon ' + tasks[idx].icon + '"></span>');
+                taskHtml.push('<i class="fa ' + tasks[idx].icon + ' fa-lg"></i>');
             }
             
             taskHtml.push('<span class="task">' + tasks[idx].description + '</span>');
@@ -349,7 +349,7 @@ $(document).ready(function () {
 
                     // If there is an icon specified for the item, add it.
                     if (tasks[idx].items[itemIdx].icon) {
-                        taskHtml.push('<span class="glyphicon ' + tasks[idx].items[itemIdx].icon + '"></span>');
+                        taskHtml.push('<i class="fa ' + tasks[idx].items[itemIdx].icon + ' fa-lg"></i>');
                     }
                     
                     switch (tasks[idx].items[itemIdx].type) {
