@@ -21,7 +21,7 @@ ol {
     margin-top: 5px;
 }
 
-.glyphicon:hover {
+.incomplete-check:hover, .complete-check:hover, .print-btn:hover, .dark-theme-btn:hover, .light-theme-btn {
     cursor: pointer;
 }
 
@@ -30,7 +30,7 @@ ol {
     margin-bottom: 10px;
 }
 
-.incomplete-check, .complete-check, .glyphicon-print, .glyphicon-tint {
+.glyphicon {
     margin-right: 8px;
 }
 

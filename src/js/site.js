@@ -334,6 +334,11 @@ $(document).ready(function () {
                 taskHtml.push('<span class="complete-check glyphicon glyphicon-ok" aria-hidden="true" title="Click to mark task incomplete" style="display: none;"></span>');
             }
 
+            // If there is an icon specified for the task, add it.
+            if (tasks[idx].icon) {
+                taskHtml.push('<span class="glyphicon ' + tasks[idx].icon + '"></span>');
+            }
+            
             taskHtml.push('<span class="task">' + tasks[idx].description + '</span>');
 
             if (tasks[idx].items && tasks[idx].items.length > 0) {
@@ -342,6 +347,11 @@ $(document).ready(function () {
                 while (itemIdx < tasks[idx].items.length) {
                     taskHtml.push('<div class="task-item-container">');
 
+                    // If there is an icon specified for the item, add it.
+                    if (tasks[idx].items[itemIdx].icon) {
+                        taskHtml.push('<span class="glyphicon ' + tasks[idx].items[itemIdx].icon + '"></span>');
+                    }
+                    
                     switch (tasks[idx].items[itemIdx].type) {
                         case "text":
                             taskHtml.push('<span>' + tasks[idx].items[itemIdx].content + '</span>');
