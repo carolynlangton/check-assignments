@@ -52,7 +52,8 @@ Task objects are specified within the `tasks` array within the root.
 * `id` (required) is the key to persist the progress for the task. Must be unique within an assignment.
 * `description` (required) is the description shown to the user.
 * `checkable` (optional - defaults to `"true"`) specifies if the task should be check-able.
-* `progressPoints` (optional - defaults to `1`) specifies the weight of the task within the progress for the assignment. 
+* `progressPoints` (optional - defaults to `1`) specifies the weight of the task within the progress for the assignment.
+* `icon` (optional) is where the icon is specified. Icons use [Font Awesome](http://fontawesome.io/icons/) icons. Specify the [Font Awesome](http://fontawesome.io/icons/) icon name for the icon you wish to display.
 * `items` (optional) is where items are specified. 
 * `tasks` (optional) is where subtasks are specified.
 
@@ -64,6 +65,7 @@ Example:
         "description": "Open the index.html file for editing in an IDE.",
         "progressPoints": 1,
         "checkable": true,
+        "icon": "fa-pencil",
         "items": [],
         "tasks": []
     }
@@ -78,6 +80,7 @@ Items are specified within the `items` array within the task. Items are used to 
     *  `"link"` is how a link is attached to a task. Supports `location` (required) and `description` (required).
     *  `"raw"` is how raw text is attached to a task. Supports `content` (required).
     *  `"text"` is how subtext is attached to a task. Supports `content` (required).
+* `icon` (optional) is where the icon is specified. Icons use [Font Awesome](http://fontawesome.io/icons/) icons. Specify the [Font Awesome](http://fontawesome.io/icons/) icon name for the icon you wish to display.    
 
 Example:
 ```javascript
@@ -85,7 +88,8 @@ Example:
     {
         "type": "download",
         "file": "demo1-starter.zip",
-        "description": "Starter files"
+        "description": "Starter files",
+        "icon": "fa-download"
     },
     {
         "type": "image",
