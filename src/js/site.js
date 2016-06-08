@@ -372,7 +372,7 @@ $(document).ready(function () {
                 }
             }
 
-            if (tasks[idx].tasks) {
+            if (tasks[idx].tasks && tasks[idx].tasks.length > 0) {
                 // Clone array and recursive call
                 generateTasksHtml(tasks[idx].tasks.slice(), taskHtml, getNextListType(listType));
             }
