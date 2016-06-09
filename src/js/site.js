@@ -408,7 +408,7 @@ $(document).ready(function () {
 
                             break;
                         case "link":
-                            taskHtml.push('<a href="' + tasks[idx].items[itemIdx].location + '" target="_blank">' + tasks[idx].items[itemIdx].description + ' (link)</a>');
+                            taskHtml.push('<a href="' + tasks[idx].items[itemIdx].location + '" target="_blank">' + tasks[idx].items[itemIdx].description + '</a>');
 
                             break;
                     }
