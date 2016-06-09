@@ -341,7 +341,9 @@ $(document).ready(function () {
         taskHtml.push('<ol type="' + getNextListType(listType) + '">');
 
         while (idx < tasks.length) {
-            var taskElmId = tasks[idx].id;
+            var taskElmId = tasks[idx].id,
+                taskDescription = tasks[idx].description;
+
             // If checkable is specified use that value, otherwise default to true
             var taskCheckable = tasks[idx].checkable != null ? tasks[idx].checkable : true;
             // If progress points is specified use that value, otherwise default to 1
@@ -358,7 +360,11 @@ $(document).ready(function () {
 
             // Emphasize root tasks if specified.
             if (emphasizeRootTasks && !getTaskParent(tasks[idx].id)) {
+                // Insert HR.
                 taskHtml.push('<hr>');
+
+                // Bold description.
+                taskDescription = '<strong>' + taskDescription + '</strong>';
             }
 
             taskHtml.push('<li id="' + taskElmId + '">');
@@ -376,7 +382,7 @@ $(document).ready(function () {
                 taskHtml.push('<i class="fa ' + tasks[idx].icon + ' fa-lg"></i>');
             }
             
-            taskHtml.push('<span class="task">' + tasks[idx].description + '</span>');
+            taskHtml.push('<span class="task">' + taskDescription + '</span>');
 
             if (tasks[idx].items && tasks[idx].items.length > 0) {
                 var itemIdx = 0;
