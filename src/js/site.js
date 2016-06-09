@@ -404,9 +404,10 @@ $(document).ready(function () {
                             taskHtml.push('<pre>' + tasks[idx].items[itemIdx].content + '</pre>');
                             break;
                         case "image":
-                            taskHtml.push('<img src="' + getArtifactUrl(tasks[idx].items[itemIdx].imageFile) + '" class="img-thumbnail" style="height: auto; width: ' +
+                            var artifactUrl = getArtifactUrl(tasks[idx].items[itemIdx].imageFile);
+                            taskHtml.push('<a href="' + artifactUrl + '" target="_blank"><img src="' + artifactUrl + '" class="img-thumbnail" style="height: auto; width: ' +
                                 (tasks[idx].items[itemIdx].width ? tasks[idx].items[itemIdx].width + 'px' : 'auto') + ';" alt="' +
-                                tasks[idx].items[itemIdx].altText + '" title="' + tasks[idx].items[itemIdx].altText + '"/>');
+                                tasks[idx].items[itemIdx].altText + '" title="' + tasks[idx].items[itemIdx].altText + '"/></a>');
 
                             break;
                         case "download":
