@@ -30,6 +30,10 @@ $(document).ready(function () {
         applyTheme('light');
     });
 
+    $('.tutorial-btn').click(function () {
+        runTutorial();
+    });
+
     // If the appropriate URL param is found, clear the app's local storage.
     if (getUrlParameter('wipe') === "true") {
         clearLocalStorage();
@@ -67,6 +71,14 @@ $(document).ready(function () {
         }).always(function () {
             $('.loaded-content').show();
             $('.loading-overlay').remove();
+
+            // If the tutorial hasn't been viewed, show it.
+            if (!getProperty('viewedTutorial')) {
+                // Not sure why this needs to be in a timeout, but with out it the tooltips are misplaced.
+                setTimeout(function () {
+                    runTutorial();
+                }, 1);
+            }
         });
     }
     else {
@@ -74,6 +86,24 @@ $(document).ready(function () {
 
         $('.loaded-content').show();
         $('.loading-overlay').remove();
+    }
+
+    function runTutorial() {
+        var checkboxElem = $($('i.incomplete-check:visible,i.complete-check:visible').first());
+        // Check if there is a checkbox element found.
+        if (checkboxElem.length) {
+            var progressElem = $('.progress');
+
+            // Set the title of the progress tooltip.
+            progressElem.attr('title', 'Overall progress will be shown here');
+
+            // Show tooltips.
+            checkboxElem.tooltip({ trigger: 'manual' }).tooltip('show').on('mouseover', function () { $(this).tooltip('destroy'); });
+            progressElem.tooltip({ placement: 'bottom', trigger: 'manual' }).tooltip('show').on('mouseover', function () { $(this).tooltip('destroy'); });
+        }
+
+        // Set the property to indicate the user has seen the tutorial.
+        setProperty('viewedTutorial', true);
     }
 
     function applyTheme(theme) {
@@ -337,8 +367,8 @@ $(document).ready(function () {
 
             // Only include the checked/unchecked icons if the task is checkable
             if (taskCheckable) {
-                taskHtml.push('<i class="incomplete-check fa fa-square-o fa-lg" aria-hidden="true" title="Click to mark task complete"></i>');
-                taskHtml.push('<i class="complete-check fa fa-check-square-o fa-lg" aria-hidden="true" title="Click to mark task incomplete" style="display: none;"></i>');
+                taskHtml.push('<i class="incomplete-check fa fa-square-o fa-lg" aria-hidden="true" title="Click to mark task complete or incomplete"></i>');
+                taskHtml.push('<i class="complete-check fa fa-check-square-o fa-lg" aria-hidden="true" title="Click to mark task complete or incomplete" style="display: none;"></i>');
             }
 
             // If there is an icon specified for the task, add it.
