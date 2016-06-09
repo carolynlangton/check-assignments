@@ -77,13 +77,14 @@ ol {
 
 /* Tutorial tooltips */
 .tooltip > .tooltip-inner {
-    background-color: #f00;
+    background-color: #EE9;
+    color: #777;
     font-size: 14px;
 }
 
 .tooltip > .tooltip-arrow {
-    border-top-color: #f00 !important;
-    border-bottom-color: #f00 !important;
+    border-top-color: #EE9 !important;
+    border-bottom-color: #EE9 !important;
 }
 
 .tooltip.in {
