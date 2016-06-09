@@ -34,6 +34,7 @@ The data file root object must include an `id`, `name` and `description`.
 * `description` (required) is the description shown to the user.
 * `notice` (optional) shows an emphasized message to the user.
 * `tasks` (optional) contains the assignment tasks.
+* `emphasizeRootTasks` (optional - defaults to `false`) specifies if the root level tasks should be emphasized.
 
 Example:
 
@@ -43,6 +44,7 @@ Example:
     "name": "Demo One",
     "description": "For this assignment, you'll be adding an alert message to a simple JavaScript application.",
     "notice": "Ensure that you are using Google Chrome during this assignment.",
+    "emphasizeRootTasks": false,
     "tasks": []
 }
 ```
@@ -51,7 +53,7 @@ Example:
 Task objects are specified within the `tasks` array within the root.
 * `id` (required) is the key to persist the progress for the task. Must be unique within an assignment.
 * `description` (required) is the description shown to the user.
-* `checkable` (optional - defaults to `"true"`) specifies if the task should be check-able.
+* `checkable` (optional - defaults to `true`) specifies if the task should be check-able.
 * `progressPoints` (optional - defaults to `1`) specifies the weight of the task within the progress for the assignment.
 * `icon` (optional) is where the icon is specified. Icons use [Font Awesome](http://fontawesome.io/icons/) icons. Specify the [Font Awesome](http://fontawesome.io/icons/) icon name for the icon you wish to display.
 * `items` (optional) is where items are specified. 

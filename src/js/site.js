@@ -15,6 +15,7 @@ $(document).ready(function () {
         taskPpMap = {},
         dataParameter = getUrlParameter('d'),
         dataFile = '',
+        emphasizeRootTasks = false,
         supportsLocalStorage = supports_html5_storage();
 
     $('.print-btn').click(function () {
@@ -46,6 +47,7 @@ $(document).ready(function () {
 
         $.getJSON(dataFile + '?t=' + Date.now(), function (dataSet) {
             dataSetId = dataSet.id;
+            emphasizeRootTasks = dataSet.emphasizeRootTasks;
 
             $('#dynamicContentContainer').html(generateHtml(dataSet));
 
@@ -322,6 +324,11 @@ $(document).ready(function () {
 
                 // Add the task to the map
                 taskPpMap[taskElmId] = taskProgressPoints;
+            }
+
+            // Emphasize root tasks if specified.
+            if (emphasizeRootTasks && !getTaskParent(tasks[idx].id)) {
+                taskHtml.push('<hr>');
             }
 
             taskHtml.push('<li id="' + taskElmId + '">');
