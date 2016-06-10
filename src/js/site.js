@@ -97,6 +97,8 @@ $(document).ready(function () {
             // Set the title of the progress tooltip.
             progressElem.attr('title', 'Overall progress will be shown here');
 
+            window.scrollTo(0, 0);
+
             // Show tooltips.
             checkboxElem.tooltip({ trigger: 'manual' }).tooltip('show').on('mouseover', function () { $(this).tooltip('destroy'); });
             progressElem.tooltip({ placement: 'bottom', trigger: 'manual' }).tooltip('show').on('mouseover', function () { $(this).tooltip('destroy'); });
