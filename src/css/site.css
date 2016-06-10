@@ -41,6 +41,10 @@ ol {
     width: 17px;
 }
 
+hr {
+    border-top: 1px solid #ddd;
+}
+
 /* Loading overlay */
 .loaded-content {
     display: none;
