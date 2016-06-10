@@ -3,14 +3,12 @@
 <head>
     <title class="page-title">Check Assignments</title>
     <meta charset="utf-8" />
-    <!-- Bootstrap core CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
-    <!-- Site styles -->
     <link href="css/site.css" rel="stylesheet" />
 </head>
-<body role="document">
+<body role="document" class="lighttheme">
     <div class="loaded-content">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -25,9 +23,10 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" class="print-btn"><span class="glyphicon glyphicon-print"></span>Print</a></li>
-                        <li><a href="#" class="dark-theme-btn"><span class="glyphicon glyphicon-tint"></span>Dark Theme</a></li>
-                        <li><a href="#" class="light-theme-btn" style="display: none;"><span class="glyphicon glyphicon-tint"></span>Light Theme</a></li>
+                        <li><a href="#" class="print-btn"><i class="fa fa-print fa-lg"></i>Print</a></li>
+                        <li><a href="#" class="dark-theme-btn"><i class="fa fa-adjust fa-lg"></i>Dark Theme</a></li>
+                        <li><a href="#" class="light-theme-btn" style="display: none;"><i class="fa fa-adjust fa-lg"></i>Light Theme</a></li>
+                        <li><a href="#" class="tutorial-btn"><i class="fa fa-question-circle-o fa-lg"></i>How To Use</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,14 +42,13 @@
     </div>
 
     <div class="loading-overlay">
-        <div class="loading-animation"></div>
+        <div class="loading-animation">
+            <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw"></i>
+        </div>
     </div>
 
-    <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Site JS -->
     <script src="js/site.js"></script>
 </body>
 </html>
