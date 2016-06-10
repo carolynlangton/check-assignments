@@ -8,6 +8,10 @@ body.darktheme {
     color: #C8C8C8;
 }
 
+body.lighttheme {
+    background-color: #F4F7F7;
+}
+
 div.content {
     margin-top: 70px; /* Account for the fixed header*/
 }

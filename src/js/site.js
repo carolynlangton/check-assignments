@@ -115,6 +115,7 @@ $(document).ready(function () {
             $('nav.navbar').removeClass('navbar-default');
 
             // Apply theming to body
+            $('body').removeClass('lighttheme');
             $('body').addClass('darktheme');
 
             $('.dark-theme-btn').hide();
@@ -127,6 +128,7 @@ $(document).ready(function () {
 
             // Apply theming to body
             $('body').removeClass('darktheme');
+            $('body').addClass('lighttheme');
 
             $('.light-theme-btn').hide();
             $('.dark-theme-btn').show();
