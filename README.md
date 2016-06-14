@@ -14,15 +14,15 @@ Check Assignments is a basic website that reads a data file (formatted as JSON) 
 * Persisted data (per device) using local storage of assignment progress and theme selection.
     
 ## Getting Started
-To run the site, open index.html the `/build` folder. Note that because data files are retrieved via an AJAX call, the site must run through a host (if testing locally, you can run it through a localhost).
+To run the site, open index.html the `/src` folder. Note that because data files are retrieved via an AJAX call, the site must run through a host (if testing locally, you can run it through a localhost).
 
-The index page requires the `d` URL parameter to specify which data file should be loaded. A sample data file is provided in `/data/demo/demo1.json` and can be loaded by specifying the `d` parameter as `/index.html?d=demo/demo1`.
+The index page requires the `d` URL parameter to specify which data file should be loaded. A sample data file is provided in `/src/data/demo/demo1.json` and can be loaded by specifying the `d` parameter as `/index.html?d=demo/demo1`.
 
 The value of the `d` URL parameter is the path to the data file starting at the `/data` folder within the site. Any assignment data files should be placed in this folder or within subfolders of this folder. To load the data file `/data/foo/bar.json`, you would specify `/index.html?d=foo/bar` (the .json file extension excluded).
 
 
 ### Deployment
-Since there are no server-side requirements, simply copy the contents of the `/build` folder and include your assignment data files within the `/data` folder.
+Since there are no server-side requirements, simply copy the contents of the `/src` folder and include your assignment data files within the `/src/data` folder. While not required, it is recommended that you minify the non-minified JavaScript and CSS files prior to deployment.
 
 ## Data File Format
 The contents of the data files must be valid JSON and use the following format.
