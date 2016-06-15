@@ -103,3 +103,10 @@ hr {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+
+/* Print styles */
+@media print { 
+    div.content {
+        margin-top: 0px;
+    }
+}
