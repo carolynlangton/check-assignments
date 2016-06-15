@@ -25,6 +25,11 @@ ol {
     margin-top: 5px;
 }
 
+/* Reduce the padding on the left of all tasks. */
+#dynamicContentContainer > ol {
+    padding-left: 30px;
+}
+
 .incomplete-check:hover, .complete-check:hover, .print-btn:hover, .dark-theme-btn:hover, .light-theme-btn {
     cursor: pointer;
 }
