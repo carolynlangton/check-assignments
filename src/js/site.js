@@ -408,7 +408,7 @@ $(document).ready(function () {
 
                             break;
                         case "download":
-                            taskHtml.push('<a href="' + getArtifactUrl(tasks[idx].items[itemIdx].file) + '" download>' + tasks[idx].items[itemIdx].description + ' (download)</a>');
+                            taskHtml.push('<a href="' + getArtifactUrl(tasks[idx].items[itemIdx].file) + '" download>' + tasks[idx].items[itemIdx].description + '</a>');
 
                             break;
                         case "link":
