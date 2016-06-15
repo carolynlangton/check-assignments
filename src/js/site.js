@@ -136,13 +136,6 @@ $(document).ready(function () {
 
         // Store selected theme.
         setProperty('theme', theme);
-
-        // This is for the chrome/webkit bug noted here: http://stackoverflow.com/questions/32980358/li-marker-character-color-not-updating-in-chrome
-        // and here http://stackoverflow.com/questions/20735133/css-chrome-not-updating-center-position-when-using-position-fixed
-        $('#dynamicContentContainer').hide();
-        setTimeout(function () {
-            $('#dynamicContentContainer').show();
-        }, 1);
     }
 
     function getUrlParameter(sParam) {
