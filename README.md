@@ -51,7 +51,6 @@ Example:
 
 ### Tasks
 Task objects are specified within the `tasks` array within the root.
-* `id` (required) is the key to persist the progress for the task. Must be unique within an assignment.
 * `description` (required) is the description shown to the user.
 * `checkable` (optional - defaults to `true`) specifies if the task should be check-able.
 * `progressPoints` (optional - defaults to `1`) specifies the weight of the task within the progress for the assignment.
@@ -63,7 +62,6 @@ Example:
 ```javascript
 "tasks": [
     {
-        "id": "1",
         "description": "Open the index.html file for editing in an IDE.",
         "progressPoints": 1,
         "checkable": true,
@@ -120,15 +118,12 @@ Example:
 ```javascript
 "tasks": [
     {
-        "id": "1",
         "description": "Modify the code to show a message to the user.",
         "tasks": [
         	{
-                "id": "1-1",
                 "description": "Open the index.html file for editing in an IDE.",
                 "tasks": [
                     {
-                        "id": "1-1-1",
                         "description": "Add comments to the code explaining what it does."
                     }
                 ]

@@ -332,13 +332,14 @@ $(document).ready(function () {
         return htmlArray.join('');
     }
 
-    function generateTasksHtml(tasks, taskHtml, listType) {
-        var idx = 0;
+    function generateTasksHtml(tasks, taskHtml, parentTaskId, listType) {
+        var idx = 0,
+            rootList = parentTaskId == null;
 
-        taskHtml.push('<ol type="' + getNextListType(listType) + '">');
+        taskHtml.push('<ol type="' + getNextListType(listType) + '"' + (rootList ? ' class="root-list"' : '') + '>');
 
         while (idx < tasks.length) {
-            var taskElmId = tasks[idx].id,
+            var taskElmId = rootList ? idx : parentTaskId + '-' + idx,
                 taskDescription = tasks[idx].description;
 
             // If checkable is specified use that value, otherwise default to true
@@ -356,7 +357,7 @@ $(document).ready(function () {
             }
 
             // Emphasize root tasks if specified.
-            if (emphasizeRootTasks && !getTaskParent(tasks[idx].id)) {
+            if (rootList && emphasizeRootTasks) {
                 // Insert HR.
                 taskHtml.push('<hr>');
 
@@ -425,7 +426,7 @@ $(document).ready(function () {
 
             if (tasks[idx].tasks && tasks[idx].tasks.length > 0) {
                 // Clone array and recursive call
-                generateTasksHtml(tasks[idx].tasks.slice(), taskHtml, getNextListType(listType));
+                generateTasksHtml(tasks[idx].tasks.slice(), taskHtml, taskElmId, getNextListType(listType));
             }
 
             taskHtml.push('</div>');

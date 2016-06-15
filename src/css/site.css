@@ -25,7 +25,7 @@ ol {
 }
 
 /* Reduce the padding on the left of all tasks. */
-#dynamicContentContainer > ol {
+ol.root-list {
     padding-left: 30px;
 }
 
