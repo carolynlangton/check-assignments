@@ -1,12 +1,15 @@
 const config = {
     "version": "1.0.1",
     "dataRoot": "data/",
-    "daysToRememberProgress": 60
+    "daysToRememberProgress": 60,
+    "listTypes": ['1', 'A'], // Uses HTML list types
+    "allowPrint": true,
+    "allowThemeChange": true,
+    "allowHowToUse": true
 };
 
 $(document).ready(function () {
-    const appId = 'check',
-        listTypes = ['1', 'A']; // Uses HTML list types
+    const appId = 'check';
 
     var completedTasks = [],
         dataSetId = 'unknown',
@@ -18,21 +21,40 @@ $(document).ready(function () {
         emphasizeRootTasks = false,
         supportsLocalStorage = supports_html5_storage();
 
-    $('.print-btn').click(function () {
-        window.print();
-    });
+    // Print.
+    if (config.allowPrint) {
+        $('.print-btn').click(function () {
+            window.print();
+        });
+    }
+    else {
+        $('.print-btn').parent().remove();
+    }
 
-    $('.dark-theme-btn').click(function () {
-        applyTheme('dark');
-    });
+    // Change theme.
+    if (config.allowThemeChange) {
+        $('.dark-theme-btn').click(function () {
+            applyTheme('dark');
+        });
 
-    $('.light-theme-btn').click(function () {
-        applyTheme('light');
-    });
+        $('.light-theme-btn').click(function () {
+            applyTheme('light');
+        });
+    }
+    else {
+        $('.dark-theme-btn').parent().remove();
+        $('.light-theme-btn').parent().remove();
+    }
 
-    $('.tutorial-btn').click(function () {
-        runTutorial();
-    });
+    // How to use.
+    if (config.allowHowToUse) {
+        $('.tutorial-btn').click(function () {
+            runTutorial();
+        });
+    }
+    else {
+        $('.tutorial-btn').parent().remove();
+    }
 
     // If the appropriate URL param is found, clear the app's local storage.
     if (getUrlParameter('wipe') === "true") {
@@ -462,13 +484,13 @@ $(document).ready(function () {
     }
 
     function getNextListType(currentlListType) {
-        var currIdx = listTypes.indexOf(currentlListType);
+        var currIdx = config.listTypes.indexOf(currentlListType);
 
-        if (currIdx != -1 && currIdx < (listTypes.length - 1)) {
-            return listTypes[currIdx + 1];
+        if (currIdx != -1 && currIdx < (config.listTypes.length - 1)) {
+            return config.listTypes[currIdx + 1];
         }
 
-        return listTypes[0];
+        return config.listTypes[0];
     }
 
     function getCompletedTasks() {
