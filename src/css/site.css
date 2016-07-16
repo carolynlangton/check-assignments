@@ -80,11 +80,16 @@ hr {
     padding: 5px;
     margin-bottom: 10px;
 }
+
 .task-alert {
     margin-bottom: 4px;
     padding: 3px 3px 3px 4px;
     border: none;
     box-shadow: none;
+}
+
+pre {
+    background-color: #fff;
 }
 
 /* Tutorial tooltips */
