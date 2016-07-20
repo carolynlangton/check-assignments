@@ -1,3 +1,6 @@
+/*global $ localStorage*/
+"use strict";
+
 const config = {
     "version": "1.0.1",
     "dataRoot": "data/",
@@ -236,7 +239,7 @@ $(document).ready(function () {
             }
         }
         else {
-            var idx = completedTasks.indexOf(taskId)
+            var idx = completedTasks.indexOf(taskId);
             if (idx !== -1) {
                 // Update the completed tasks
                 completedTasks.splice(idx, 1);
@@ -342,11 +345,11 @@ $(document).ready(function () {
         var htmlArray = [];
 
         if (data.description) {
-            htmlArray.push('<div class="description">' + data.description + '</div>')
+            htmlArray.push('<div class="description">' + data.description + '</div>');
         }
 
         if (data.notice) {
-            htmlArray.push('<div class="alert alert-warning"><strong>Notice:&nbsp;</strong>' + data.notice + '</div>')
+            htmlArray.push('<div class="alert alert-warning"><strong>Notice:&nbsp;</strong>' + data.notice + '</div>');
         }
 
         generateTasksHtml(data.tasks, htmlArray);
