@@ -2,7 +2,7 @@
 "use strict";
 
 const config = {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "dataRoot": "data/",
     "daysToRememberProgress": 60,
     "listTypes": ['1', 'A'], // Uses HTML list types
