@@ -1,0 +1,61 @@
+﻿body {
+    background-color: #F7F7F7;
+}
+
+li.task {
+    margin-top: 10px;
+}
+
+li.task > .btn-group {
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+li.item, li.new-task {
+    list-style-type: none;
+    margin-top: 12px;
+}
+
+.btn {
+    margin-right: 4px;
+}
+
+.fa {
+    margin-left: 6px;
+}
+
+div.content {
+    margin-top: 60px; /* Account for the fixed header*/
+}
+
+.fa {
+    margin-right: 6px;
+}
+
+div[contenteditable="true"] {
+    border: 1px dashed #AAA;
+    border-style: dashed;
+    min-height: 26px;
+    padding: 2px;
+}
+
+div[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  color: #999999;
+  display: block; /* For Firefox */
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fa-icon-selector {
+    height: auto;
+    max-height: 200px;
+    min-width: 100px;
+    overflow-x: hidden;
+}
+
+.icon-selector .fa {
+    width: 22px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title class="page-title">Check Assignments Editor</title>
+    <meta charset="utf-8" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/editor.css" rel="stylesheet" />
+</head>
+<body role="document">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-title" href="#">Check Assignments Editor</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown file-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="new-btn">New</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" class="upload-btn">Upload..</a></li>
+                            <li><a href="#" class="download-btn">Download..</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="assignment-properties-btn" title="Assignment Properties"><i class="fa fa-cogs fa-lg"></i>Properties</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content container" role="main">
+        <div class="rendered">
+            <ol class="root-list task-list">
+                <li class="new-task">
+                    <button type="button" class="btn btn-default add-task-btn" title="Add task">Add Task</button>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- File uploader -->
+    <input type="file" class="uploaded-file hidden" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>
