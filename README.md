@@ -12,6 +12,7 @@ Check Assignments is a basic website that reads a data file (formatted as JSON) 
 * No server-side code requirements
 * Assignment tasks can be nested and can include images, raw text, downloads and more. 
 * Persisted data (per device) using local storage of assignment progress and theme selection.
+* Basic assignment editor.
     
 ## Getting Started
 To run the site, open index.html the `/src` folder. Note that because data files are retrieved via an AJAX call, the site must run through a host (if testing locally, you can run it through a localhost).
@@ -20,6 +21,8 @@ The index page requires the `d` URL parameter to specify which data file should 
 
 The value of the `d` URL parameter is the path to the data file starting at the `/data` folder within the site. Any assignment data files should be placed in this folder or within subfolders of this folder. To load the data file `/data/foo/bar.json`, you would specify `/index.html?d=foo/bar` (the .json file extension excluded).
 
+### Editor
+A basic assignment editor is included, which generates the data files that can be consumed by Check Assignments. The editor can be accessed by opening `/src/editor.html`. There are no server-side code requirements for the editor, but it could be extended to call an API to save and load assignments as needed.
 
 ### Deployment
 Since there are no server-side requirements, simply copy the contents of the `/src` folder and include your assignment data files within the `/src/data` folder. While not required, it is recommended that you minify the non-minified JavaScript and CSS files prior to deployment.
