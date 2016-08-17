@@ -369,8 +369,8 @@ $(document).ready(function () {
 
             // If checkable is specified use that value, otherwise default to true
             var taskCheckable = tasks[idx].checkable != null ? tasks[idx].checkable : true;
-            // If progress points is specified use that value, otherwise default to 1
-            var taskProgressPoints = tasks[idx].progressPoints != null ? tasks[idx].progressPoints : 1;
+            // If progress points is specified use that value, otherwise default to 10
+            var taskProgressPoints = tasks[idx].progressPoints != null ? tasks[idx].progressPoints : 10;
 
             // Only add the task to the map and increase the progress points if the task is checkable
             if (taskCheckable) {
