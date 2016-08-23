@@ -8,7 +8,8 @@ const config = {
     "listTypes": ['1', 'A'], // Uses HTML list types
     "allowPrint": true,
     "allowThemeChange": true,
-    "allowHowToUse": true
+    "allowHowToUse": true,
+    "copyrightTemplate": "© {year}" // The current year will replace the {year} placeholder.
 };
 
 $(document).ready(function () {
@@ -94,6 +95,8 @@ $(document).ready(function () {
         }).fail(function () {
             $('#dynamicContentContainer').html('<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Failed to load data set.</div>');
         }).always(function () {
+            insertCopyright();
+
             $('.loaded-content').show();
             $('.loading-overlay').remove();
 
@@ -107,6 +110,8 @@ $(document).ready(function () {
         });
     }
     else {
+        insertCopyright();
+
         $('#dynamicContentContainer').html('<div class="alert alert-warning" role="alert"><strong>Whoops!</strong> No parameter supplied. Check to make sure that the URL is correct.</div>');
 
         $('.loaded-content').show();
@@ -175,6 +180,12 @@ $(document).ready(function () {
             if (sParameterName[0] === sParam) {
                 return sParameterName[1] === undefined ? true : sParameterName[1];
             }
+        }
+    }
+
+    function insertCopyright() {
+        if (config.copyrightTemplate) {
+            $('footer').html(config.copyrightTemplate.replace('{year}', new Date().getFullYear()));
         }
     }
 

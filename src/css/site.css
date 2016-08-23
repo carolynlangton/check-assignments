@@ -49,6 +49,12 @@ hr {
     border-top: 1px solid #ddd;
 }
 
+footer {
+    color: #777;
+    text-align: center;
+    margin: 30px auto 10px auto;
+}
+
 /* Loading overlay */
 .loaded-content {
     display: none;
