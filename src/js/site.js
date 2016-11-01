@@ -117,6 +117,13 @@ $(document).ready(function () {
         $('.loaded-content').show();
         $('.loading-overlay').remove();
     }
+    
+    // add syntax highlighting to pre and code blocks after 200ms (to allow dynamic html content to load)
+    setTimeout(function (){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    }, 200);
 
     function runTutorial() {
         var checkboxElem = $($('i.incomplete-check:visible,i.complete-check:visible').first());
